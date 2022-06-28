@@ -2,11 +2,11 @@ import "./author.css";
 
 export default function Author() {
     return (
-        <dl class="author-wrap">
-            <dt class="a11y-hidden">Author</dt>
-            <dd class="author"><img src="./assets/profile.jpg" alt="" /> Chilli</dd>
-            <dt class="a11y-hidden">Created</dt>
-            <dd class="created">2022.05.25</dd>
+        <dl className="author-wrap">
+            <dt className="a11y-hidden">Author</dt>
+            <dd className="author"><img src="./assets/profile.jpg" alt="" /> Chilli</dd>
+            <dt className="a11y-hidden">Created</dt>
+            <dd className="created">2022.05.25</dd>
         </dl>
     );
 }
