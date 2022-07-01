@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import PostBanner from "../components/banner/PostBanner";
 import Footer from "../components/footer/Footer";
 import Header from "../components/header/Header";
@@ -9,20 +10,19 @@ import "./wrapbox.css";
 export default function PostView() {
     return (
         <>
-            <Header />
             <PostBanner />
-            <div class="view">
-			<div class="max-width">
-				<section class="wrap-box">
-					<div class="inner">
+            <div className="view">
+			<div className="max-width">
+				<section className="wrap-box">
+					<div className="inner">
 						<Author />
 						<Category />
-						<div class="title-wrap">
+						<div className="title-wrap">
 							<h2>Lorem, ipsum dolor sit amet consectetur adipisicing elit.</h2>
-							<button class="btn-like">Like</button>
+							<button className="btn-like">Like</button>
 						</div>
 						<hr />
-						<div class="view-contents">
+						<div className="view-contents">
 							<p>
 								Lorem ipsum dolor sit amet consectetur, adipisicing elit. Inventore illum nostrum perferendis voluptas, voluptate soluta corrupti dolore quidem. Placeat, eaque! Exercitationem est
 								facilis dolor quas odio cum incidunt repudiandae vel. Lorem ipsum dolor sit amet consectetur, adipisicing elit. Inventore illum nostrum perferendis voluptas, voluptate soluta corrupti
@@ -41,22 +41,21 @@ export default function PostView() {
 								cum incidunt repudiandae vel.
 							</p>
 						</div>
-						<div class="btn-group">
-							<a href="#" class="btn-modify">
-								<span class="a11y-hidden">modify</span>
+						<div className="btn-group">
+							<a href="#" className="btn-modify">
+								<span className="a11y-hidden">modify</span>
 							</a>
-							<button type="button" class="btn-delete">
-								<span class="a11y-hidden">delete</span>
+							<button type="button" className="btn-delete">
+								<span className="a11y-hidden">delete</span>
 							</button>
 						</div>
-						<a href="./" class="btn-back">
-							<span class="a11y-hidden">Back</span>
-						</a>
+						<Link to="./" className="btn-back">
+							<span className="a11y-hidden">Back</span>
+						</Link>
 					</div>
 				</section>
 			</div>
 		</div>
-        <Footer />
         </>
     );
 }

@@ -1,10 +1,11 @@
+import { Link } from "react-router-dom"
 import Author from "./Author"
 import Category from "./Category"
 import styles from "./post.module.css"
 
 export default function Post() {
     return (
-        <a href="post-view.html" className={styles.post}>
+        <Link to="/postView" className={styles.post}>
             <article>
                 <img src={process.env.PUBLIC_URL + 'assets/post-img6.jpg'} alt="" />
                 <div className={styles["contents-wrap"]}>
@@ -21,6 +22,6 @@ export default function Post() {
                     </p>
                 </div>
             </article>
-        </a>
-    )
+        </Link>
+    );
 }

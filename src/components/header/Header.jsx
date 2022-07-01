@@ -2,16 +2,19 @@ import "./header.css";
 import "./button.css";
 import Login from "./Login";
 import Logo from "../../assets/Logo.svg";
+import { Link } from "react-router-dom";
 
 export default function Header() {
     return (
         <header>
             <div className="max-width">
+
                 <h1>
-                    <a href="./">
+                    <Link to="/">
                         <img src={Logo} alt="My Blog" />
-                    </a>
+                    </Link>
                 </h1>
+
                 <ul>
                     <Login />
 
