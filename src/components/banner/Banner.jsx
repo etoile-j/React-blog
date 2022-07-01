@@ -3,7 +3,7 @@ import styles from "./banner.module.css";
 export default function Banner() {
     return (
         <div className={styles.banner}>
-			<div className={styles["max-width"]}>
+			<div className="max-width">
 				<div className={styles["banner-contents"]}>
 					<p className={styles["sub-text"]}>React Blog</p>
 					<p className={styles["main-text"]}>My BLOG</p>
