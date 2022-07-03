@@ -1,27 +1,29 @@
-import { Link } from "react-router-dom"
-import Author from "./Author"
-import Category from "./Category"
-import styles from "./post.module.css"
+import { Link } from "react-router-dom";
+import Author from "./Author";
+import Category from "./Category";
+import styles from "./post.module.css";
+import data from "../../data.json";
 
 export default function Post() {
     return (
-        <Link to="/postView" className={styles.post}>
-            <article>
-                <img src={process.env.PUBLIC_URL + 'assets/post-img6.jpg'} alt="" />
-                <div className={styles["contents-wrap"]}>
-                    <Category />
-                    <h3>Lorem, ipsum dolor sit amet consectetur adipisicing elit</h3>
-                    <Author />
-                    <p className={styles["post-description"]}>
-                        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Inventore illum nostrum perferendis voluptas, voluptate soluta corrupti dolore quidem. Placeat, eaque! Exercitationem est
-                        facilis dolor quas odio cum incidunt repudiandae vel. Lorem ipsum dolor sit amet consectetur, adipisicing elit. Inventore illum nostrum perferendis voluptas, voluptate soluta
-                        corrupti dolore quidem. Placeat, eaque! Exercitationem est facilis dolor quas odio cum incidunt repudiandae vel. Lorem ipsum dolor sit amet consectetur, adipisicing elit. Inventore
-                        illum nostrum perferendis voluptas, voluptate soluta corrupti dolore quidem. Placeat, eaque! Exercitationem est facilis dolor quas odio cum incidunt repudiandae vel. Lorem ipsum
-                        dolor sit amet consectetur, adipisicing elit. Inventore illum nostrum perferendis voluptas, voluptate soluta corrupti dolore quidem. Placeat, eaque! Exercitationem est facilis
-                        dolor quas odio cum incidunt repudiandae vel."
-                    </p>
-                </div>
-            </article>
-        </Link>
+        <>
+            {data.posts.map(post => (
+                <li key={post.id}>
+                <Link to="/postView" className={styles.post}>
+                    <article>
+                        <img src={process.env.PUBLIC_URL + post.thumbnail} alt="" />
+                        <div className={styles["contents-wrap"]}>
+                            <Category category={post.category} />
+                            <h3>{post.title}</h3>
+                            <Author />
+                            <p className={styles["post-description"]}>
+                                {post.contents[0].text}
+                            </p>
+                        </div>
+                    </article>
+                </Link>
+                </li>
+            ))}
+        </>
     );
 }

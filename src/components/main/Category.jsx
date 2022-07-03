@@ -1,11 +1,13 @@
 import styles from "./category.module.css"
+import data from "../../data.json";
 
-export default function Category() {
+export default function Category({category}) {
     return (
         <dl className={styles.category}>
             <dt className="a11y-hidden">Category</dt>
-            <dd>Life</dd>
-            <dd>Style</dd>
+            {category.map((ctgr, idx) => (
+            <dd key={idx}>{ctgr}</dd>
+            ))}
         </dl>
     );
 }
