@@ -1,17 +1,19 @@
 import styles from "./banner.module.css";
 
-export default function Banner() {
+export default function Banner({data}) {
     return (
-        <div className={styles.banner}>
+		<>
+			<div className={styles.banner}>
 			<div className="max-width">
 				<div className={styles["banner-contents"]}>
-					<p className={styles["sub-text"]}>React Blog</p>
-					<p className={styles["main-text"]}>My BLOG</p>
+					<p className={styles["sub-text"]}>{data.subTitle}</p>
+					<p className={styles["main-text"]}>{data.mainTitle}</p>
 					<p className={styles.description}>
-						Lorem ipsum dolor sit amet consectetur adipisicing elit. Officiis nostrum dolor provident beatae deserunt magnam, illo neque. Maiores ipsum commodi dolorum beatae aliquid laboriosam est
+						{data.description}
 					</p>
 				</div>
 			</div>
-		</div>
-    )
+			</div>
+		</>
+    );
 }

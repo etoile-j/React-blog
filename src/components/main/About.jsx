@@ -4,22 +4,18 @@ import Twitter from "../../assets/Twitter.svg";
 import Instagram from "../../assets/Instagram.svg";
 import Github from "../../assets/Github.svg";
 
-export default function About() {
+export default function About({data}) {
     return (
         <aside className="about">
             <h2>About Me</h2>
-            <img src="./assets/profile.jpg" alt="" className="user-profile" />
-            <p className="user-name">Chilli</p>
-            <p className="user-description">Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+            <img src={data.profileImg} alt="" className="user-profile" />
+            <p className="user-name">{data.name}</p>
+            <p className="user-description">{data.userInfo}</p>
             <h3>Categories</h3>
             <ul className="categories">
-                <li><a href="#">Life</a></li>
-                <li><a href="#">Style</a></li>
-                <li><a href="#">Tech</a></li>
-                <li><a href="#">Sport</a></li>
-                <li><a href="#">Photo</a></li>
-                <li><a href="#">Develop</a></li>
-                <li><a href="#">Music</a></li>
+                {data.category.map((value, idx) => (
+                    <li key={idx}><a href="#">{value}</a></li>
+                ))}
             </ul>
             <h3>Follow</h3>
             <ul className="sns">

@@ -2,12 +2,11 @@ import { Link } from "react-router-dom";
 import Author from "./Author";
 import Category from "./Category";
 import styles from "./post.module.css";
-import data from "../../data.json";
 
-export default function Post() {
+export default function Post({data}) {
     return (
         <>
-            {data.posts.map(post => (
+            {data.map(post => (
                 <li key={post.id}>
                 <Link to="/postView" className={styles.post}>
                     <article>
@@ -15,7 +14,7 @@ export default function Post() {
                         <div className={styles["contents-wrap"]}>
                             <Category category={post.category} />
                             <h3>{post.title}</h3>
-                            <Author />
+                            <Author data={post} />
                             <p className={styles["post-description"]}>
                                 {post.contents[0].text}
                             </p>

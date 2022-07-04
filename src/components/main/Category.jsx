@@ -1,5 +1,4 @@
 import styles from "./category.module.css"
-import data from "../../data.json";
 
 export default function Category({category}) {
     return (

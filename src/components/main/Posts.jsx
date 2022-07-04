@@ -1,10 +1,10 @@
 import Post from "./Post";
 import "./posts.css"
 
-export default function Posts() {
+export default function Posts({data}) {
     return (
         <ul className="posts">
-            <Post />
+            <Post data={data} />
         </ul>
     );
 }
